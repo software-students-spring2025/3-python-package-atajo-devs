@@ -1,39 +1,81 @@
-# Team Members:
-[Lily Fu](https://github.com/fulily0325)<br>
-[JiaLiang Tang](https://github.com/JialiangTang1)<br>
-[Peng Jiang](https://github.com/PengJiang-Victor)<br>
-[Adam Cao](https://github.com/eth3r3aI)<br>
+# VideoGameDay
 
-# Package Usage:
-Output some fun facts about games.
+## Description
+A fun Python package for gamers! Get video game recommendations, trivia, guessing challenges, and a gaming luck meter to predict your gaming fate.
 
+## Team Members:
+- [Lily Fu](https://github.com/fulily0325)<br>
+- [JiaLiang Tang](https://github.com/JialiangTang1)<br>
+- [Peng Jiang](https://github.com/PengJiang-Victor)<br>
+- [Adam Cao](https://github.com/eth3r3aI)<br>
 
+## PyPI Package
 
-## Game Guessing Function
+## Installation
 
-### Description
+1. Install pip in local environment
+
+2. Install the package
+    ```python
+    pip install VideoGameDay
+    ```
+3. Import functions
+    ```python
+    from VideoGameDay import *
+    ```
+
+## Features
+
+Examples in the python file: [Example.py](https://github.com/software-students-spring2025/3-python-package-atajo-devs/blob/main/example.py)
+
+**This package includes four exciting gaming-related functions:**
+
+### 1. Game Guessing
+
 This function is about to guess video games based on a given cryptic description. It compares the input description to a set of predefined hints and returns the closest matching game.
 
-### Usage
+Matches the input description to known game hints using similarity comparison. Returns the closest matching game title. If no close match is found, selects a random game from a predefined list.
 
-#### Importing the Function
-To use the function in your Python script, import it from the package:
+#### **Usage Example:**
 
-from package_name import guess_the_game
-
-#### Calling the Function
 Pass a cryptic game description as a string to get the best-matching game:
 
+```python
 description = "A silent hero, a green outfit, a princess in distress."
 print(guess_the_game(description))
+```
 
 Example Output:
+```
 The answer is The Legend of Zelda!
+```
 
-### Functionality
-Matches the input description to known game hints using similarity comparison.
+### 2. Gaming Luck Meter
 
-Returns the closest matching game title.
+This function predicts how lucky you will be in your gaming session today. It allows you to select a game genre and then generates a randomized luck percentage based on weighted probabilities, favoring higher luck outcomes.  
 
-If no close match is found, selects a random game from a predefined list.
+#### **Usage Example:**
 
+Run the function to select a game genre and receive your luck prediction:  
+
+```python
+🎮 Choose your game type today:
+  [FPS] - First-Person Shooter
+  [RPG] - Role-Playing Game
+  [Strategy] - Strategy/Tactics
+  [Racing] - Racing Game
+  [Fighting] - Fighting Game
+  [MMO] - Massively Multiplayer Online
+  [Survival] - Survival Game
+  [Horror] - Horror Game
+  [Sandbox] - Sandbox/Open World
+  [Puzzle] - Puzzle/Logic Game
+Enter your choice: FPS
+```
+
+Example Output:
+```
+🎮 You're playing「First-Person Shooter」today! 
+   Your gaming luck is「51%」.
+🔫 Decent accuracy today, but expect some missed shots and a few annoying campers.
+```
