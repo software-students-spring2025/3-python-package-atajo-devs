@@ -69,8 +69,11 @@ def test_gaming_luck_randomness(monkeypatch):
 # Ensure game type input are recognized regardless of case.
 @pytest.mark.parametrize("input_value", ["fps", "FPS", "fPs", "rpg", "RPG", "RpG", "Strategy", "strategy", "STRATEGY"])
 def test_case_insensitive_input(input_value, monkeypatch):
+    game_type_map = {key.lower(): key for key in GAME_TYPES}
     monkeypatch.setattr("builtins.input", lambda _: input_value)
     result = gaming_luck_meter()
-    full_game_name = GAME_TYPES[input_value.upper()]
+    
+    correct_game_key = game_type_map[input_value.lower()]
+    full_game_name = GAME_TYPES[correct_game_key]
 
     assert full_game_name in result, f"Expected game type '{full_game_name}' to be in output, but got: {result}"

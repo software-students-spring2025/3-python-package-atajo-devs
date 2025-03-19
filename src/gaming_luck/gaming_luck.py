@@ -3,6 +3,8 @@ from .luck_data import GAME_TYPES, LUCK_MESSAGES
 
 def gaming_luck_meter() -> str:
     
+    game_type_map = {key.lower(): key for key in GAME_TYPES}
+    
     # Choosing game type from GAME_TYPES
     print("🎮 Choose your game type today:")
     for key, value in GAME_TYPES.items():
@@ -10,9 +12,9 @@ def gaming_luck_meter() -> str:
 
     chosen_game = None
     while chosen_game not in GAME_TYPES:
-        user_input = input("Enter your choice: ").strip().upper()
-        if user_input in GAME_TYPES:
-            chosen_game = user_input
+        user_input = input("Enter your choice: ").strip().lower()
+        if user_input in game_type_map:
+            chosen_game = game_type_map[user_input]
         else:
             print("❌ Invalid choice. Please select a valid game type.")
 
