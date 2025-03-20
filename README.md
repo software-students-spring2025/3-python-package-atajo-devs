@@ -100,3 +100,25 @@ Example Output:
 ```
 You should play Elden Ring!
 ```
+### 4. Funfacts about one game
+By importing the package, you can get a random fun fact about certain game specified.
+Example usage:
+```
+from src.fun_facts import get_fun_facts
+
+print(get_fun_facts("Elden Ring"))  # Works normally
+print(get_fun_facts("Baldurs Gate 3"))  # Fuzzy match suggests "Baldur's Gate 3"
+print(get_fun_facts("Doom"))  # No match found
+```
+Example output:
+```
+🎮 Fun fact about Elden Ring: One of the most iconic bosses, Malenia, has defeated millions of players worldwide.
+
+Did you mean 'Baldur's Gate 3'?
+🎮 Fun fact: Baldur's Gate 3 was in early access for nearly three years before its full release in 2023.
+
+❌ Sorry, I don't have fun facts for 'Doom'. Try another game!
+```
+
+
+
