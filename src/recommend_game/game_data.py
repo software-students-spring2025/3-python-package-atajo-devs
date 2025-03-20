@@ -22,4 +22,11 @@ game_categories = {
     "Sandbox": ["Minecraft"],
 }
 
-print(game_categories)
+def get_game_categories():
+    """This function returns the keys of the game_categories dictionary as a list"""
+    return list(game_categories.keys())
+
+
+def get_game_dic():
+    """This function returns the whole dictionary"""
+    return game_categories
