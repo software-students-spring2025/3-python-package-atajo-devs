@@ -3,11 +3,8 @@ from gaming_luck.gaming_luck import gaming_luck_meter
 from recommend_game.recommend_game import recommend_game
 import builtins
 
-# Guess Game
-print("Game Guesser Example:")
-
 # Gaming Luck
-print("\nGaming Luck Example:\n")
+print("Gaming Luck Example:\n")
 
 game_genres = [
     "FPS",
@@ -39,12 +36,9 @@ for genre in game_genres:
     print()
 builtins.input = original_input
 
+# Guess Game
+print("\nGame Guesser Example:\n")
 
-
-
-############################################################
-# Example usage of the function with different descriptions
-############################################################
 descriptions = [
     "A silent hero, a green outfit, a princess in distress.",
     "A blue blur dashes through loops, collecting golden rings and battling an evil doctor.",
@@ -54,8 +48,8 @@ descriptions = [
 ]
 
 for desc in descriptions:
+    print(desc)
     print(guess_the_game(desc))
-
 
 # Recommend Game
 print("\nRecommend Game Example:\n")
