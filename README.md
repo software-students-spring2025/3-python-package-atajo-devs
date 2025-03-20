@@ -122,3 +122,6 @@ Did you mean 'Baldur's Gate 3'?
 ```
 
 
+
+## Link to this package on pypi
+https://pypi.org/project/VideoGameDay/
