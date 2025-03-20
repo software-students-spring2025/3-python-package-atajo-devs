@@ -100,7 +100,6 @@ Example Output:
 ```
 You should play Elden Ring!
 ```
-
 ### 4. Funfacts about one game
 By importing the package, you can get a random fun fact about certain game specified.
 Example usage:
