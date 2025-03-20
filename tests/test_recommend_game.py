@@ -1,6 +1,6 @@
 import unittest
 from VideoGameDay.recommend_game import validate_input
-from VideoGameDay.game_data import get_game_categories
+from VideoGameDay.recommend_game.game_data import get_game_categories
 
 class TestRecommendGame(unittest.TestCase):
 
