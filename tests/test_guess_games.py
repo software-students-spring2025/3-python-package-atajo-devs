@@ -1,6 +1,7 @@
 import pytest
-from guess_game.guesser import find_closest_match, guess_the_game
-from guess_game.game_data import GAME_HINTS, GAME_POOL
+from VideoGameDay.guess_game.guesser import find_closest_match, guess_the_game  # ✅ Fixed
+from VideoGameDay.guess_game.game_data import GAME_HINTS, GAME_POOL  # ✅ Fixed
+
 
 
 def test_exact_match():

@@ -1,6 +1,6 @@
 import unittest
-from fun_fact_rand.fun_facts_db import DB
-from fun_fact_rand.fun_facts import get_fun_facts
+from VideoGameDay.fun_fact_rand.fun_facts_db import DB  # ✅ Fixed
+from VideoGameDay.fun_fact_rand.fun_facts import get_fun_facts  # ✅ Fixed
 
 class TestFunFacts(unittest.TestCase):
 
