@@ -22,6 +22,7 @@ game_categories = {
     "Sandbox": ["Minecraft"],
 }
 
+
 def get_game_categories():
     """This function returns the keys of the game_categories dictionary as a list"""
     return list(game_categories.keys())
