@@ -1,7 +1,7 @@
-from guess_game.guesser import guess_the_game
-from gaming_luck.gaming_luck import gaming_luck_meter
-from recommend_game.recommend_game import recommend_game
-from fun_fact_rand.fun_facts import get_fun_facts
+from VideoGameDay import guess_the_game
+from VideoGameDay import gaming_luck_meter
+from VideoGameDay import recommend_game
+from VideoGameDay import get_fun_facts
 import builtins
 
 # Gaming Luck
