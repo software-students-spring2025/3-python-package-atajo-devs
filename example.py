@@ -1,5 +1,6 @@
 from guess_game.guesser import guess_the_game
 from gaming_luck.gaming_luck import gaming_luck_meter
+from recommend_game.recommend_game import recommend_game
 import builtins
 
 # Guess Game
@@ -21,6 +22,23 @@ for genre in game_genres:
     print(gaming_luck_meter())
 builtins.input = original_input
 
+# Recommend Game
+print("\nRecommend Game Example:\n")
+
+game_genres = [
+    "RPG",
+    "Shooter",
+    "Horror"
+]
+
+original_input = builtins.input
+for genre in game_genres:
+    builtins.input = lambda _: genre
+    print(f"Selected genre: {genre}")
+    recommend_game()
+    print()
+builtins.input = original_input
+
 
 
 
@@ -37,3 +55,21 @@ descriptions = [
 
 for desc in descriptions:
     print(guess_the_game(desc))
+
+
+# Recommend Game
+print("\nRecommend Game Example:\n")
+
+game_genres = [
+    "RPG",
+    "Shooter",
+    "Horror"
+]
+
+original_input = builtins.input
+for genre in game_genres:
+    builtins.input = lambda _: genre
+    print(f"Selected genre: {genre}")
+    recommend_game()
+    print()
+builtins.input = original_input
