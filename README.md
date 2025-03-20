@@ -7,7 +7,7 @@ A fun Python package for gamers! Get video game recommendations, trivia, guessin
 - [Lily Fu](https://github.com/fulily0325)<br>
 - [JiaLiang Tang](https://github.com/JialiangTang1)<br>
 - [Peng Jiang](https://github.com/PengJiang-Victor)<br>
-- [Adam Cao](https://github.com/eth3r3aI)<br>
+- [Jinzhi Cao](https://github.com/eth3r3aI)<br>
 
 ## PyPI Package
 
@@ -78,4 +78,23 @@ Example Output:
 🎮 You're playing「First-Person Shooter」today! 
    Your gaming luck is「51%」.
 🔫 Decent accuracy today, but expect some missed shots and a few annoying campers.
+```
+### 3. Recommend game
+Run the function to select a game genre and discover a game to play:
+
+```
+What kind of games would you like to play?
+0. RPG
+1. Shooter
+2. Horror
+3. Platformer
+4. Open-World/Action-Adventure
+5. Puzzle
+6. Sandbox
+7. Random
+```
+
+Example Output:
+```
+You should play Elden Ring!
 ```

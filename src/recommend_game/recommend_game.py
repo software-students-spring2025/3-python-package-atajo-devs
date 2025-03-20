@@ -1,6 +1,8 @@
 """Module providing a recommend game after inputting a genre"""
+
 import random
 from .game_data import get_game_categories, get_game_dic
+
 
 def recommend_game():
     """Print out the genre of games
