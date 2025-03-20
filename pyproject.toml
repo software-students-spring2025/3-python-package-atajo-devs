@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "VideoGameDay"
+version = "0.1.2"  # Updated version to fix packaging issues
 description = "A fun package for video game recommendations, trivia, guessing, and luck prediction"
 readme = "README.md"
-version = "0.1.0"
 authors = [
     {name = "Lily Fu", email = "jf4296@nyu.edu"},
     {name = "Jialiang Tang", email = "jt4260@nyu.edu"},
@@ -16,7 +16,12 @@ authors = [
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: GNU General Public License (GPL)",
-    "Programming Language :: Python :: 3"
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
 ]
 keywords = ["game", "fortune", "fun", "gaming", "guessing", "trivia", "luck"]
 
@@ -25,3 +30,13 @@ dev = ["pytest"]
 
 [project.urls]
 Homepage = "https://github.com/software-students-spring2025/3-python-package-atajo-devs"
+Repository = "https://github.com/software-students-spring2025/3-python-package-atajo-devs"
+Issues = "https://github.com/software-students-spring2025/3-python-package-atajo-devs/issues"
+
+[tool.setuptools]
+packages = ["VideoGameDay", "VideoGameDay.*"]  # Ensure all submodules are included
+package-dir = {"" = "src"}  # Correctly map the package directory
+
+[tool.setuptools.package-data]
+"VideoGameDay" = ["*.txt", "*.json"]  # Include additional data files if needed
+
