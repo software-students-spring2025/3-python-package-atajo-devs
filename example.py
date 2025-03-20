@@ -1,6 +1,7 @@
 from guess_game.guesser import guess_the_game
 from gaming_luck.gaming_luck import gaming_luck_meter
 from recommend_game.recommend_game import recommend_game
+from fun_fact_rand.fun_facts import get_fun_facts
 import builtins
 
 # Gaming Luck
@@ -67,3 +68,19 @@ for genre in game_genres:
     recommend_game()
     print()
 builtins.input = original_input
+
+#Fun Facts About Games
+print("\n📚 Fun Facts About Games:\n")
+
+game_titles = [
+    "Elden Ring",
+    "Minecraft",
+    "Cyberpunk 2077",
+    "Super Mario Bros.",
+    "The Legend of Zelda",
+    "Red Dead Redemption 2"
+]
+
+for title in game_titles:
+    print(f"\n🔹 Game: {title}")
+    print(get_fun_facts(title))
