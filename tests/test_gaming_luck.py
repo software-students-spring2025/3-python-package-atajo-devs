@@ -1,7 +1,7 @@
 import pytest
 import re
-from gaming_luck.luck_data import GAME_TYPES
-from gaming_luck.gaming_luck import gaming_luck_meter
+from VideoGameDay.gaming_luck.luck_data import GAME_TYPES  # ✅ Fixed
+from VideoGameDay.gaming_luck.gaming_luck import gaming_luck_meter  # ✅ Fixed
 
 GAME_GENRES = list(GAME_TYPES.keys())
 GAME_GENRE_NAMES = list(GAME_TYPES.items())

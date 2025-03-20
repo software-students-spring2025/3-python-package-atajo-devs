@@ -1,8 +1,7 @@
-"""Test module for recommend_game.py using pytest and mocking."""
-
 import pytest
 from unittest.mock import patch
-from recommend_game.recommend_game import recommend_game, print_menu
+from VideoGameDay.recommend_game.recommend_game import recommend_game, print_menu  # ✅ Fixed
+
 
 # Mock data for testing
 TEST_GENRES = ["RPG", "Shooter", "Horror"]
