@@ -11,12 +11,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Generate Pipfile.lock if missing
+        run: pipenv lock  # Creates or updates Pipfile.lock
       - name: Install Python, pipenv and Pipfile packages
         uses: kojoru/prepare-pipenv@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Generate Pipfile.lock if missing
-        run: pipenv lock  # Creates or updates Pipfile.lock
       - name: Turn on 'editable' mode
         run: |
           pipenv install -e .
