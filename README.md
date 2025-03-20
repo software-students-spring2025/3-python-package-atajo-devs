@@ -16,11 +16,11 @@ A fun Python package for gamers! Get video game recommendations, trivia, guessin
 1. Install pip in local environment
 
 2. Install the package
-    ```python
+    ```
     pip install VideoGameDay
     ```
 3. Import functions
-    ```python
+    ```
     from VideoGameDay import *
     ```
 
@@ -40,7 +40,7 @@ Matches the input description to known game hints using similarity comparison. R
 
 Pass a cryptic game description as a string to get the best-matching game:
 
-```python
+```
 description = "A silent hero, a green outfit, a princess in distress."
 print(guess_the_game(description))
 ```
@@ -58,7 +58,7 @@ This function predicts how lucky you will be in your gaming session today. It al
 
 Run the function to select a game genre and receive your luck prediction:  
 
-```python
+```
 🎮 Choose your game type today:
   [FPS] - First-Person Shooter
   [RPG] - Role-Playing Game
