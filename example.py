@@ -73,7 +73,7 @@ builtins.input = original_input
 print("\n📚 Fun Facts About Games:\n")
 
 game_titles = [
-    "Elden Ring",
+    "Elden",
     "Minecraft",
     "Cyberpunk 2077",
     "Super Mario Bros.",
