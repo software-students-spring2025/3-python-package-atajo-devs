@@ -20,3 +20,20 @@ for genre in game_genres:
     print(f"Selected genre: {genre}")
     print(gaming_luck_meter())
 builtins.input = original_input
+
+
+
+
+############################################################
+# Example usage of the function with different descriptions
+############################################################
+descriptions = [
+    "A silent hero, a green outfit, a princess in distress.",
+    "A blue blur dashes through loops, collecting golden rings and battling an evil doctor.",
+    "You wake up in a vault, the world outside is in ruins, and your choices define humanity's fate.",
+    "A space marine takes on demons from hell with an arsenal of devastating weapons.",
+    "A father and daughter-like duo navigate a post-apocalyptic world filled with danger."
+]
+
+for desc in descriptions:
+    print(guess_the_game(desc))
