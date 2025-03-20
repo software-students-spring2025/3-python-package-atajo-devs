@@ -12,6 +12,7 @@ A fun Python package for gamers! Get video game recommendations, trivia, guessin
 - [Jinzhi Cao](https://github.com/eth3r3aI)<br>
 
 ## PyPI Package
+[VideoGameDay](https://pypi.org/project/VideoGameDay/)
 
 ## Installation
 
@@ -121,7 +122,6 @@ Did you mean 'Baldur's Gate 3'?
 ```
 
 
+
 ## Link to this package on pypi
 https://pypi.org/project/VideoGameDay/
-
-
