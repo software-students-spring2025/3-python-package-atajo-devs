@@ -1,4 +1,4 @@
-![CI](https://github.com/software-students-spring2025/3-python-package-atajo-devs/actions/workflows/build.yaml/badge.svg)
+![Build Status](https://github.com/software-students-spring2025/3-python-package-atajo-devs/actions/workflows/build.yml/badge.svg)
 
 # VideoGameDay
 
