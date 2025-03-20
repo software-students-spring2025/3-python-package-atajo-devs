@@ -21,11 +21,7 @@ classifiers = [
 keywords = ["game", "fortune", "fun", "gaming", "guessing", "trivia", "luck"]
 
 [project.optional-dependencies]
-dev = ["pytest", "unittest"]
-
-[tool.pytest.ini_options]
-pythonpath = ["src"]
-testpaths = ["tests"]
+dev = ["pytest"]
 
 [project.urls]
 Homepage = "https://github.com/software-students-spring2025/3-python-package-atajo-devs"
