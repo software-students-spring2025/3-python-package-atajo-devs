@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "VideoGameDay"
-version = "0.1.2"  # Updated version to fix packaging issues
+version = "0.1.3"  # Updated version to fix packaging issues
 description = "A fun package for video game recommendations, trivia, guessing, and luck prediction"
 readme = "README.md"
 authors = [
