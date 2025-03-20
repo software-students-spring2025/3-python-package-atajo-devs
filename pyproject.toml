@@ -13,16 +13,8 @@ authors = [
     {name = "Peng Jiang", email = "pj2196@nyu.edu"},
     {name = "Adam Cao", email = "jc9770@nyu.edu"}
 ]
-license = { file = "LICENSE" }
-classifiers = [
-    "License :: OSI Approved :: GNU General Public License (GPL)",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11"
-]
+license = "GPL-3.0-or-later"  # ✅ FIXED: Use SPDX license expression
+
 keywords = ["game", "fortune", "fun", "gaming", "guessing", "trivia", "luck"]
 
 [project.optional-dependencies]
@@ -34,9 +26,7 @@ Repository = "https://github.com/software-students-spring2025/3-python-package-a
 Issues = "https://github.com/software-students-spring2025/3-python-package-atajo-devs/issues"
 
 [tool.setuptools]
-packages = ["VideoGameDay", "VideoGameDay.*"]  # Ensure all submodules are included
-package-dir = {"" = "src"}  # Correctly map the package directory
+packages = { find = { where = ["src"] } }  #  FIXED: Automatically find all submodules
 
 [tool.setuptools.package-data]
 "VideoGameDay" = ["*.txt", "*.json"]  # Include additional data files if needed
-
