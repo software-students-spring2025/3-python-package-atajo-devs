@@ -12,6 +12,7 @@ A fun Python package for gamers! Get video game recommendations, trivia, guessin
 - [Jinzhi Cao](https://github.com/eth3r3aI)<br>
 
 ## PyPI Package
+[VideoGameDay](https://pypi.org/project/VideoGameDay/0.1.0/)
 
 ## Installation
 
@@ -119,9 +120,5 @@ Did you mean 'Baldur's Gate 3'?
 
 ❌ Sorry, I don't have fun facts for 'Doom'. Try another game!
 ```
-
-
-## Link to this package on pypi
-https://pypi.org/project/VideoGameDay/0.1.0/
 
 
