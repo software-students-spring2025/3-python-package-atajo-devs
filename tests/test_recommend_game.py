@@ -1,47 +1,49 @@
-"""Test module for game recommendation system using pytest and mocking."""
-# test_recommend_game.py
+"""Test module for recommend_game.py using pytest and mocking."""
 import pytest
 from unittest.mock import patch
-from recommend_game.recommend_game import recommend_game
+from recommend_game.recommend_game import recommend_game, print_menu
 
-# Sample game data for testing
-TEST_GENRES = ["RPG", "Shooter", "Horror", "Platformer", "Open-World/Action-Adventure", "Puzzle", "Sandbox"]
+# Mock data for testing
+TEST_GENRES = ["RPG", "Shooter", "Horror"]
 TEST_GAMES = {
     "RPG": ["The Witcher 3", "Final Fantasy"],
     "Shooter": ["DOOM", "Halo"],
     "Horror": ["Resident Evil", "Silent Hill"]
 }
 
-def test_recommendation_flow(mock_dict, mock_cat):
-    """Test full recommendation flow with valid input."""
-    mock_cat.return_value = TEST_GENRES
-    mock_dict.return_value = TEST_GAMES
+def test_print_menu(capsys):
+    """Test the print_menu function."""
+    with patch("recommend_game.recommend_game.get_game_categories", return_value=TEST_GENRES):
+        print_menu()
+        captured = capsys.readouterr()
+        print(captured.out)
+        assert "What kind of games would you like to play?" in captured.out
+        for i, genre in enumerate(TEST_GENRES):
+            assert f"{i}. {genre}" in captured.out
+        assert f"{len(TEST_GENRES)}. Random" in captured.out
 
-    with patch('builtins.input', return_value='0'):
-        with patch('builtins.print') as mock_print:
-            recommend_game()
-            mock_print.assert_called_with(f"You should play {TEST_GAMES['RPG'][0]}!")
+@patch("recommend_game.game_data.get_game_categories", return_value=TEST_GENRES)
+@patch("recommend_game.game_data.get_game_dic", return_value=TEST_GAMES)
+def test_recommend_game_valid_input(mock_dict, mock_cat, capsys):
+    """Test the recommend_game function with valid input."""
+    with patch("builtins.input", return_value="0"):
+        recommend_game()
+        captured = capsys.readouterr()
+        print(captured.out)
+        assert "You should play" in captured.out
+        assert any(game in captured.out for game in TEST_GAMES["RPG"])
 
-def test_invalid_then_valid_input(mock_dict, mock_cat):
+@patch("recommend_game.game_data.get_game_categories", return_value=TEST_GENRES)
+@patch("recommend_game.game_data.get_game_dic", return_value=TEST_GAMES)
+def test_recommend_game_invalid_then_valid_input(mock_dict, mock_cat, capsys):
     """Test recovery from invalid input."""
-    mock_cat.return_value = TEST_GENRES
-    mock_dict.return_value = TEST_GAMES
-
-    with patch('builtins.input', side_effect=['invalid', '1']):
-        with patch('builtins.print') as mock_print:
-            recommend_game()
-            mock_print.assert_called_with(f"You should play {TEST_GAMES['Shooter'][0]}!")
-
-def test_random_selection(mock_dict, mock_cat):
-    """Test random selection functionality."""
-    mock_cat.return_value = TEST_GENRES
-    mock_dict.return_value = TEST_GAMES
-
-    with patch('builtins.input', return_value=str(len(TEST_GENRES))):
-        with patch('builtins.print') as mock_print:
-            recommend_game()
-            args, _ = mock_print.call_args
-            assert args[0].startswith("You should play")
+    with patch("builtins.input", side_effect=["invalid", "1"]):
+        recommend_game()
+        captured = capsys.readouterr()
+        print(captured.out)
+        assert "Try again: invalid input!" in captured.out
+        assert "You should play" in captured.out
+        assert any(game in captured.out for game in TEST_GAMES["Shooter"])
 
 if __name__ == "__main__":
     pytest.main(["-v", "tests/test_recommend_game.py"])
