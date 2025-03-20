@@ -120,8 +120,3 @@ Did you mean 'Baldur's Gate 3'?
 
 ❌ Sorry, I don't have fun facts for 'Doom'. Try another game!
 ```
-
-
-
-## Link to this package on pypi
-https://pypi.org/project/VideoGameDay/
