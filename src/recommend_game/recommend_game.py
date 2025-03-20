@@ -1,6 +1,6 @@
 """Module providing a recommend game after inputting a genre"""
 import random
-from game_data import get_game_categories, get_game_dic
+from .game_data import get_game_categories, get_game_dic
 
 def recommend_game():
     """Print out the genre of games
@@ -11,7 +11,7 @@ def recommend_game():
     genre = None
     while not valid:
         print_menu()
-        in_str = input()
+        in_str = input("Enter your choice: ").strip().lower()
         genre, valid = validate_input(in_str)
         if not valid:
             print("Try again: invalid input!")
@@ -48,7 +48,7 @@ def validate_input(in_str: str):
         in_str = in_str.lower()
         if in_str == "random":
             return random.choice(genres), 1
-        if in_str in genres:
-            return in_str, 1
-
+        for genre in genres:
+            if in_str == genre.lower():
+                return genre, 1
     return None, 0

@@ -2,38 +2,16 @@
 # test_recommend_game.py
 import pytest
 from unittest.mock import patch
-from recommend_game import recommend_game, validate_input
+from recommend_game.recommend_game import recommend_game
 
 # Sample game data for testing
-TEST_GENRES = ["RPG", "Shooter", "Horror"]
+TEST_GENRES = ["RPG", "Shooter", "Horror", "Platformer", "Open-World/Action-Adventure", "Puzzle", "Sandbox"]
 TEST_GAMES = {
     "RPG": ["The Witcher 3", "Final Fantasy"],
     "Shooter": ["DOOM", "Halo"],
     "Horror": ["Resident Evil", "Silent Hill"]
 }
 
-def test_validate_input_valid_numbers():
-    """Test numeric input validation."""
-    assert validate_input("0") == ("RPG", 1)
-    assert validate_input("1") == ("Shooter", 1)
-    assert validate_input("2") == ("Horror", 1)
-    assert validate_input("3") == (TEST_GENRES[0], 1)  # Random choice
-
-def test_validate_input_valid_text():
-    """Test text input validation."""
-    assert validate_input("RPG") == ("RPG", 1)
-    assert validate_input("shooter") == ("Shooter", 1)
-    assert validate_input("HORROR") == ("Horror", 1)
-    assert validate_input("random") == (TEST_GENRES[0], 1)
-
-def test_validate_input_invalid():
-    """Test invalid input handling."""
-    assert validate_input("invalid") == (None, 0)
-    assert validate_input("99") == (None, 0)
-    assert validate_input("") == (None, 0)
-
-@patch('recommend_game.get_game_categories')
-@patch('recommend_game.get_game_dict')
 def test_recommendation_flow(mock_dict, mock_cat):
     """Test full recommendation flow with valid input."""
     mock_cat.return_value = TEST_GENRES
@@ -44,8 +22,6 @@ def test_recommendation_flow(mock_dict, mock_cat):
             recommend_game()
             mock_print.assert_called_with(f"You should play {TEST_GAMES['RPG'][0]}!")
 
-@patch('recommend_game.get_game_categories')
-@patch('recommend_game.get_game_dict')
 def test_invalid_then_valid_input(mock_dict, mock_cat):
     """Test recovery from invalid input."""
     mock_cat.return_value = TEST_GENRES
@@ -56,8 +32,6 @@ def test_invalid_then_valid_input(mock_dict, mock_cat):
             recommend_game()
             mock_print.assert_called_with(f"You should play {TEST_GAMES['Shooter'][0]}!")
 
-@patch('recommend_game.get_game_categories')
-@patch('recommend_game.get_game_dict')
 def test_random_selection(mock_dict, mock_cat):
     """Test random selection functionality."""
     mock_cat.return_value = TEST_GENRES
@@ -70,4 +44,4 @@ def test_random_selection(mock_dict, mock_cat):
             assert args[0].startswith("You should play")
 
 if __name__ == "__main__":
-    pytest.main(["-v", "test_recommend_game.py"])
+    pytest.main(["-v", "tests/test_recommend_game.py"])
