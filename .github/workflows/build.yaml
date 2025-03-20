@@ -11,8 +11,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+        #Fix: Install pip, pipenv before using it
+      - name: Install Python, pip, and pipenv
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pipenv
+
+      - name: Verify Pipenv Installation
+        run: pipenv --version 
+
+        #Fix: Ensure Pipfile.lock exists before using pipenv
       - name: Generate Pipfile.lock if missing
-        run: pipenv lock  # Creates or updates Pipfile.lock
+        run: |
+          if [ ! -f Pipfile.lock ]; then
+            pipenv lock
+          fi
       - name: Install Python, pipenv and Pipfile packages
         uses: kojoru/prepare-pipenv@v1
         with:
