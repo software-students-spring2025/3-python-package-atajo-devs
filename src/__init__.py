@@ -1,7 +1,8 @@
 # Import all functions from submodules
-from guess_game import *
-from gaming_luck import *
-from recommend_game import *
+from .guess_game import *
+from .gaming_luck import *
+from .recommend_game import *
+from .fun_facts import *
 
 # Define what gets imported when using `from VideoGameDay import *`
 __all__ = [
@@ -16,4 +17,7 @@ __all__ = [
     "recommend_game",
     "print_menu",
     "validate_input",
+
+    # fun_facts functions
+    "get_fun_facts",
 ]
