@@ -62,4 +62,4 @@ def test_recommend_game_invalid_then_valid_input(mock_dict, mock_cat, capsys):
 
 
 if __name__ == "__main__":
-    pytest.main(["-v", "tests/test_recommend_game.py"])
+    pytest.main(["-v", "test_recommend_game.py"])
