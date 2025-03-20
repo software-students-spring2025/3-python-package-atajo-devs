@@ -2,7 +2,7 @@
 from .guess_game import *
 from .gaming_luck import *
 from .recommend_game import *
-from .fun_facts import *
+from .fun_fact_rand import *
 
 # Define what gets imported when using `from VideoGameDay import *`
 __all__ = [
