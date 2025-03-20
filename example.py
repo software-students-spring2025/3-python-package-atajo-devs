@@ -38,3 +38,38 @@ for genre in game_genres:
     recommend_game()
     print()
 builtins.input = original_input
+
+
+
+
+############################################################
+# Example usage of the function with different descriptions
+############################################################
+descriptions = [
+    "A silent hero, a green outfit, a princess in distress.",
+    "A blue blur dashes through loops, collecting golden rings and battling an evil doctor.",
+    "You wake up in a vault, the world outside is in ruins, and your choices define humanity's fate.",
+    "A space marine takes on demons from hell with an arsenal of devastating weapons.",
+    "A father and daughter-like duo navigate a post-apocalyptic world filled with danger."
+]
+
+for desc in descriptions:
+    print(guess_the_game(desc))
+
+
+# Recommend Game
+print("\nRecommend Game Example:\n")
+
+game_genres = [
+    "RPG",
+    "Shooter",
+    "Horror"
+]
+
+original_input = builtins.input
+for genre in game_genres:
+    builtins.input = lambda _: genre
+    print(f"Selected genre: {genre}")
+    recommend_game()
+    print()
+builtins.input = original_input
