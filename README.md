@@ -12,7 +12,7 @@ A fun Python package for gamers! Get video game recommendations, trivia, guessin
 - [Jinzhi Cao](https://github.com/eth3r3aI)<br>
 
 ## PyPI Package
-[VideoGameDay](https://pypi.org/project/VideoGameDay/0.1.0/)
+[VideoGameDay](https://pypi.org/project/VideoGameDay/)
 
 ## Installation
 
